@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; background: #f5f5f5; }
+    .semestre { margin: 20px 0; }
+    .curso {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 8px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .curso:hover { background: #d0f0ff; }
+    #info { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular Interactiva</h1>
+
+  <div class="semestre">
+    <h2>Semestre 1</h2>
+    <div class="curso" onclick="mostrar('Matemática I')">Matemática I</div>
+    <div class="curso" onclick="mostrar('Programación I')">Programación I</div>
+    <div class="curso" onclick="mostrar('Introducción a la Ingeniería')">Intro a la Ingeniería</div>
+  </div>
+
+  <div class="semestre">
+    <h2>Semestre 2</h2>
+    <div class="curso" onclick="mostrar('Física I')">Física I</div>
+    <div class="curso" onclick="mostrar('Álgebra Lineal')">Álgebra Lineal</div>
+    <div class="curso" onclick="mostrar('Estructuras de Datos')">Estructuras de Datos</div>
+  </div>
+
+  <div id="info"><em>Haz clic en una materia para ver su descripción.</em></div>
+
+  <script>
+    const descripciones = {
+      'Matemática I': 'Contenidos: funciones, límites, derivadas.',
+      'Programación I': 'Contenidos: variables, condicionales, bucles, Python.',
+      'Introducción a la Ingeniería': 'Contenidos: ramas, ética, resolución de problemas.',
+      'Física I': 'Contenidos: cinemática, dinámica, leyes de Newton.',
+      'Álgebra Lineal': 'Contenidos: vectores, matrices, sistemas lineales.',
+      'Estructuras de Datos': 'Contenidos: listas, pilas, colas, árboles.'
+    };
+
+    function mostrar(curso) {
+      document.getElementById("info").innerHTML =
+        `<h3>${curso}</h3><p>${descripciones[curso]}</p>`;
+    }
+  </script>
+</body>
+</html>
